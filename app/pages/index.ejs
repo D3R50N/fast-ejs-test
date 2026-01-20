@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- $css %>
+    <title>Document</title>
+  </head>
+  <body>
+   
+   <main class="min-h-screen">
+     <!-- Navigation -->
+      <%-$('navigation',"/") %> 
+
+     <!-- Hero Section -->
+     <section class="relative h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+       <div class="absolute inset-0 opacity-10">
+         <div class="absolute inset-0" style="
+          background-image: url('/abstract-geometric-tech-pattern.jpg');
+          background-size: cover;
+          background-position: center;
+        "></div> 
+       </div>
+
+       <!-- Parallax -->
+       <div class="parallax" data-speed="1">
+         <div class="relative z-10 text-center px-4">
+           <h1 class="font-impact text-[12vw] uppercase md:text-[10vw] leading-none tracking-tighter mb-8">
+      MONSIEUR DEV
+           </h1>
+
+           <p class="text-xl md:text-2xl tracking-wide max-w-3xl mx-auto mb-12">
+             Développeur Full Stack · React · Next.js · TypeScript
+           </p>
+
+           <div class="flex gap-4 justify-center">
+             <a href="/projects" class="bg-white text-black hover:bg-white/90 font-bold rounded-none border-2 border-white px-6 py-3 inline-block">
+               VOIR MES PROJETS
+             </a>
+
+             <a href="/contact" class="bg-transparent text-white border-2 border-white hover:bg-white hover:text-black font-bold rounded-none px-6 py-3 inline-block">
+               ME CONTACTER
+             </a>
+           </div>
+         </div>
+       </div>
+
+       <!-- Scroll indicator -->
+       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+         <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2">
+           <div class="w-1 h-2 bg-white rounded-full"></div>
+         </div>
+       </div>
+     </section>
+
+     <!-- About Section -->
+     <section class="min-h-screen flex items-center bg-white text-black border-t-4 border-black">
+       <div class="container mx-auto px-4 py-24">
+         <div class="parallax" data-speed="0.2">
+           <div class="max-w-4xl mx-auto">
+             <h2 class="font-impact text-6xl md:text-8xl mb-12">
+               À PROPOS
+             </h2>
+
+             <div class="grid md:grid-cols-2 gap-12">
+               <div class="space-y-6">
+                 <p class="text-lg leading-relaxed">
+                   Développeur passionné par les technologies web modernes et
+                   l'expérience utilisateur. Je transforme des idées en
+                   applications web performantes et élégantes.
+                 </p>
+
+                 <p class="text-lg leading-relaxed">
+                   Spécialisé en React, Next.js, TypeScript et Node.js, je crée
+                   des solutions full-stack qui allient design et fonctionnalité.
+                 </p>
+               </div>
+
+               <div class="space-y-4">
+                 <div class="border-2 border-black p-6">
+                   <h3 class="font-impact text-2xl mb-4">COMPÉTENCES</h3>
+                   <ul class="space-y-2">
+                     <li>→ React & Next.js</li>
+                     <li>→ TypeScript & JavaScript</li>
+                     <li>→ Node.js & Express</li>
+                     <li>→ PostgreSQL & MongoDB</li>
+                     <li>→ Tailwind CSS</li>
+                     <li>→ Git & CI/CD</li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+
+           </div>
+         </div>
+       </div>
+     </section>
+
+     <!-- Services -->
+     <section class="min-h-screen flex items-center bg-black text-white border-t-4 border-white">
+       <div class="container mx-auto px-4 py-24">
+         <div class="parallax" data-speed="0.2">
+           <h2 class="font-impact text-6xl md:text-8xl mb-16 text-center">
+             SERVICES
+           </h2>
+
+           <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+             <% const services = [
+            { id: '01', title: 'DÉVELOPPEMENT WEB', desc: 'Applications web modernes et performantes avec React et Next.js' },
+            { id: '02', title: 'UI/UX DESIGN', desc: 'Interfaces utilisateur intuitives et expériences mémorables' },
+            { id: '03', title: 'CONSULTING', desc: 'Conseils techniques et architecture de solutions web' }
+          ]; %>
+
+             <% services.forEach(s => { %>
+             <div class="border-2 border-white p-8 hover:bg-white hover:text-black transition-colors">
+               <div class="font-impact text-4xl mb-4"><%= s.id %></div>
+               <h3 class="font-impact text-2xl mb-4"><%= s.title %></h3>
+               <p class="leading-relaxed"><%= s.desc %></p>
+             </div>
+             <% }) %>
+           </div>
+         </div>
+       </div>
+     </section>
+
+     <!-- CTA -->
+     <section class="min-h-[60vh] flex items-center bg-white text-black border-t-4 border-black">
+       <div class="container mx-auto px-4 py-24">
+         <div class="parallax" data-speed="0.3">
+           <div class="max-w-4xl mx-auto text-center">
+             <h2 class="font-impact text-6xl md:text-8xl mb-8">
+               TRAVAILLONS ENSEMBLE
+             </h2>
+
+             <p class="text-xl mb-12 leading-relaxed">
+               Un projet en tête ? Discutons-en autour d'un café (virtuel ou non).
+             </p>
+
+             <a href="/contact" class="bg-black text-white hover:bg-black/90 font-bold rounded-none border-2 border-black text-lg px-12 py-6 inline-block">
+               DÉMARRER UN PROJET
+             </a>
+           </div>
+         </div>
+       </div>
+     </section>
+
+     <!-- Footer -->
+     <footer class="bg-black text-white border-t-4 border-white py-12">
+       <div class="container mx-auto px-4">
+         <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+           <div class="font-impact text-2xl">MONSIEUR DEV</div>
+
+           <nav class="flex gap-8 text-sm">
+             <a href="/">HOME</a>
+             <a href="/projects">PROJECTS</a>
+             <a href="/blog">BLOG</a>
+             <a href="/products">PRODUCTS</a>
+             <a href="/contact">CONTACT</a>
+           </nav>
+
+           <div class="text-sm">© <%= year || 2026 %> Monsieur Dev</div>
+         </div>
+       </div>
+     </footer>
+   </main>
+
+  </body>
+</html>

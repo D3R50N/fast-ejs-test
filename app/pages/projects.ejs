@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- $css %>
+  </head>
+  <body>
+      <%-$('navigation',"/") %>
+      <div class="flex min-h-screen flex-col justify-center items-center">
+
+        <h1 class="font-myfont <%=$cls("bg-slate-500",$date.getFullYear()== 2026 && "text-8xl font-bold" ) %>">
+          These are my projecdts on <%= $date.getFullYear() %>
+        </h1>
+        <img src="../public/images/2.png" alt="" class="w-10 aspect-square rounded-full" />
+      </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<nav class="fixed top-0 left-0 right-0 z-50 border-b-2 border-black bg-white">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="font-impact text-2xl tracking-tight hover:opacity-70 transition-opacity">
+        MONSIEUR DEV
+        <%- $if(1+1==2,"<p>Hello</p>" ) %>
+  <%= $if($env("NODE_ENV")=="prod", "Hello","World") %>
+
+
+      </a>
+
+      <ul class="flex gap-8">
+        <% const navItems = [
+          { href: '/', label: 'HOME' },
+          { href: '/projects', label: 'PROJECTS' },
+          { href: '/blog', label: 'BLOG' },
+          { href: '/products', label: 'PRODUCTS' },
+          { href: '/contact', label: 'CONTACT' }
+        ]; %>
+
+        <% navItems.forEach(item => { %>
+        <li>
+          <a href="<%= item.href %>" class="font-mono text-sm font-bold tracking-wider hover:opacity-70 transition-opacity
+                <%= $cls($route === item.href&& 'underline decoration-2 underline-offset-4') %>">
+            <%= $if($route === item.href,"»") %>
+            <%= item.label %>
+            <%= $if($route === item.href,"«") %>
+
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</nav>
